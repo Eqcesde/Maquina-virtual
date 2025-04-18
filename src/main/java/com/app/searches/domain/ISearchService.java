@@ -2,15 +2,14 @@ package com.app.searches.domain;
 
 import java.util.List;
 
-public interface ISearchesService {
-    
+public interface ISearchService {
     List<Searches> findAll();
 
     Searches findById(Long id);
 
-    Searches save(Searches user);
+    Searches save(Searches search);
 
-    Searches update(Searches user, Long id);
+    Searches update(Searches search, Long id);
 
     void deleteById(Long id);
 }

@@ -35,9 +35,9 @@ public interface IDestinationsRepository extends JpaRepository<Destinations, Lon
 
     // Additional application-specific methods:
 
-    // Search for a user by their email
+    // Search for a user by their name
     Optional<Destinations> findByName(String name);
 
-    // Check if an email is already registered
+    // Check if an name is already registered
     boolean existsByName(String name);
 }

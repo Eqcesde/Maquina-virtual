@@ -2,15 +2,14 @@ package com.app.museums.domain;
 
 import java.util.List;
 
-public interface IMuseumsService {
-    
+public interface IMuseumService {
     List<Museums> findAll();
 
     Museums findById(Long id);
 
-    Museums save(Museums user);
+    Museums save(Museums museum);
 
-    Museums update(Museums user, Long id);
+    Museums update(Museums museum, Long id);
 
     void deleteById(Long id);
 }

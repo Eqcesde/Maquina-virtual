@@ -8,11 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.app.shared.adapters.exception.ResourceNotFoundException;
 
 import com.app.destinations.domain.IDestinationsRepository;
-import com.app.destinations.domain.IDestinationsService;
+import com.app.destinations.domain.IDestinationService;
 import com.app.destinations.domain.Destinations;
 
 @Service
-public class DestinationsService implements IDestinationsService {
+public class DestinationsService implements IDestinationService {
 
     private final IDestinationsRepository destinationsRepository;
 

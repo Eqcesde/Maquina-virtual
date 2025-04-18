@@ -15,23 +15,25 @@ public class Hotels {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private String location;
+
     @Column(nullable = false, unique = true)
-    private String destination_id;
+    private String destinationId;
 
     @Column(nullable = false)
-    private String average_price;
-
+    private Double pricePerNight;
 
     // Empty constructor (required for JPA)
     public Hotels() {}
 
-    // Constructor with parameters
-    public Hotels(Long id, String name, String average_price, String destination_id, String tourist_flow, String description) {
+    // Constructor con parámetros
+    public Hotels(Long id, String name, String location, Double pricePerNight, String destinationId) {
         this.id = id;
         this.name = name;
-        this.average_price = average_price;
-        this.destination_id = destination_id;
-        
+        this.location = location;
+        this.pricePerNight = pricePerNight;
+        this.destinationId = destinationId;
     }
 
     // Getters y Setters
@@ -43,28 +45,37 @@ public class Hotels {
         this.id = id;
     }
 
-    public String getname() {
+    public String getName() {
         return name;
     }
 
-    public void setname(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getaverage_price() {
-        return average_price;
+    public String getLocation() {
+        return location;
     }
 
-    public void setaverage_price(String average_price) {
-        this.average_price = average_price;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getdestination_id() {
-        return this.destination_id;
+    public String getdestinationId() {
+        return this.destinationId;
     }
 
-    public void setdestination_id(String destination_id) {
-        this.destination_id = destination_id;
+    public void setdestinationId(String destinationId) {
+        this.destinationId = destinationId;
     }
+
+    public void setPricePerNight(Double pricePerNight) {
+        this.pricePerNight = pricePerNight;
+    }
+
+    public void getPricePerNight(Double pricePerNight){
+        this.pricePerNight = pricePerNight;
+    }
+
 }
 

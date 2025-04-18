@@ -2,15 +2,15 @@ package com.app.hotels.domain;
 
 import java.util.List;
 
-public interface IHotelsService {
-    
+public interface IHotelService {
+   
     List<Hotels> findAll();
 
     Hotels findById(Long id);
 
-    Hotels save(Hotels user);
+    Hotels save(Hotels hotel);
 
-    Hotels update(Hotels user, Long id);
+    Hotels update(Hotels hotel, Long id);
 
     void deleteById(Long id);
 }

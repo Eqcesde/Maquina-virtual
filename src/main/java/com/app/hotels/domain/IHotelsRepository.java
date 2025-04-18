@@ -35,9 +35,9 @@ public interface IHotelsRepository extends JpaRepository<Hotels, Long> {
 
     // Additional application-specific methods:
 
-    // Search for a user by their email
-    Optional<Hotels> findByEmail(String email);
+    // Search for a user by their name
+    Optional<Hotels> findByName(String name);
 
-    // Check if an email is already registered
-    boolean existsByEmail(String email);
+    // Check if an name is already registered
+    boolean existsByName(String name);
 }
