@@ -35,9 +35,9 @@ public interface IMuseumsRepository extends JpaRepository<Museums, Long> {
 
     // Additional application-specific methods:
 
-    // Search for a user by their email
-    Optional<Museums> findByEmail(String email);
+    // Search for a user by their name
+    Optional<Museums> findByName(String name);
 
-    // Check if an email is already registered
-    boolean existsByEmail(String email);
+    // Check if an name is already registered
+    boolean existsByName(String name);
 }

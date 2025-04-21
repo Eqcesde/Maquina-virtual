@@ -15,13 +15,13 @@ public class Restaurants {
     private String name;
 
     @Column(nullable = false, unique = true)
-    private String destination_id;
+    private String destinationId;
 
     @Column(nullable = false)
-    private String cuisine_type;
+    private String cuisineType;
 
     @Column(nullable = false)
-    private String average_price ;
+    private String averagePrice ;
 
    
 
@@ -29,12 +29,12 @@ public class Restaurants {
     public Restaurants() {}
 
     // Constructor with parameters
-    public Restaurants(Long id, String name, String cuisine_type, String destination_id, String average_price , String description) {
+    public Restaurants(Long id, String name, String cuisineType, String destinationId, String averagePrice) {
         this.id = id;
         this.name = name;
-        this.cuisine_type = cuisine_type;
-        this.destination_id = destination_id;
-        this.average_price  = average_price ;
+        this.cuisineType = cuisineType;
+        this.destinationId = destinationId;
+        this.averagePrice  = averagePrice ;
         
     }
 
@@ -55,28 +55,28 @@ public class Restaurants {
         this.name = name;
     }
 
-    public String getcuisine_type() {
-        return cuisine_type;
+    public String getCuisineType() {
+        return cuisineType;
     }
 
-    public void setcuisine_type(String cuisine_type) {
-        this.cuisine_type = cuisine_type;
+    public void setCuisineType(String cuisineType) {
+        this.cuisineType = cuisineType;
     }
 
-    public String getdestination_id() {
-        return this.destination_id;
+    public String getDestinationId() {
+        return this.destinationId;
     }
 
-    public void setdestination_id(String destination_id) {
-        this.destination_id = destination_id;
+    public void setDestinationId(String destinationId) {
+        this.destinationId = destinationId;
     }
 
-    public String getaverage_price () {
-        return this.average_price ;
+    public String getAveragePrice () {
+        return this.averagePrice ;
     }
 
-    public void setaverage_price (String average_price ) {
-        this.average_price  = average_price ;
+    public void setAveragePrice (String averagePrice ) {
+        this.averagePrice  = averagePrice ;
     }
 
   

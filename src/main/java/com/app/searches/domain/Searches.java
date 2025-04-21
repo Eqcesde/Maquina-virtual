@@ -12,24 +12,24 @@ public class Searches {
     private Long id;
 
     @Column(nullable = false)
-    private String user_id;
+    private String userId;
 
     @Column(nullable = false, unique = true)
-    private String destination_id;
+    private String destinationId;
 
     @Column(nullable = false)
-    private String search_date;
+    private String searchDate;
 
 
     // Empty constructor (required for JPA)
     public Searches() {}
 
     // Constructor with parameters
-    public Searches(Long id, String user_id, String search_date, String destination_id, String tourist_flow, String description) {
+    public Searches(Long id, String userId, String searchDate, String destinationId, String tourist_flow, String description) {
         this.id = id;
-        this.user_id = user_id;
-        this.search_date = search_date;
-        this.destination_id = destination_id;
+        this.userId = userId;
+        this.searchDate = searchDate;
+        this.destinationId = destinationId;
         
     }
 
@@ -42,28 +42,28 @@ public class Searches {
         this.id = id;
     }
 
-    public String getuser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setuser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getsearch_date() {
-        return search_date;
+    public String getSearchDate() {
+        return searchDate;
     }
 
-    public void setsearch_date(String search_date) {
-        this.search_date = search_date;
+    public void setSearchDate(String searchDate) {
+        this.searchDate = searchDate;
     }
 
-    public String getdestination_id() {
-        return this.destination_id;
+    public String getDestinationId() {
+        return this.destinationId;
     }
 
-    public void setdestination_id(String destination_id) {
-        this.destination_id = destination_id;
+    public void setDestinationId(String destinationId) {
+        this.destinationId = destinationId;
     }
 }
 

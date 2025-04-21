@@ -15,21 +15,21 @@ public class Museums {
     private String name;
 
     @Column(nullable = false, unique = true)
-    private String destination_id;
+    private String destinationId;
 
     @Column(nullable = false)
-    private String entry_price;
+    private String entryPrice;
 
 
     // Empty constructor (required for JPA)
     public Museums() {}
 
     // Constructor with parameters
-    public Museums(Long id, String name, String entry_price, String destination_id) {
+    public Museums(Long id, String name, String entryPrice, String destinationId) {
         this.id = id;
         this.name = name;
-        this.entry_price = entry_price;
-        this.destination_id = destination_id;
+        this.entryPrice = entryPrice;
+        this.destinationId = destinationId;
         
     }
 
@@ -50,20 +50,20 @@ public class Museums {
         this.name = name;
     }
 
-    public String getentry_price() {
-        return entry_price;
+    public String getentryPrice() {
+        return entryPrice;
     }
 
-    public void setentry_price(String entry_price) {
-        this.entry_price = entry_price;
+    public void setentryPrice(String entryPrice) {
+        this.entryPrice = entryPrice;
     }
 
-    public String getdestination_id() {
-        return this.destination_id;
+    public String getdestinationId() {
+        return this.destinationId;
     }
 
-    public void setdestination_id(String destination_id) {
-        this.destination_id = destination_id;
+    public void setdestinationId(String destinationId) {
+        this.destinationId = destinationId;
     }
 }
 

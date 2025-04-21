@@ -21,7 +21,7 @@ public class Destinations {
     private String country;
 
     @Column(nullable = false)
-    private String tourist_flow;
+    private String touristFlow;
 
     @Column(nullable = false)
     private String description;
@@ -30,12 +30,12 @@ public class Destinations {
     public Destinations() {}
 
     // Constructor with parameters
-    public Destinations(Long id, String name, String country, String climate, String tourist_flow, String description) {
+    public Destinations(Long id, String name, String country, String climate, String touristFlow, String description) {
         this.id = id;
         this.name = name;
         this.country = country;
         this.climate = climate;
-        this.tourist_flow = tourist_flow;
+        this.touristFlow = touristFlow;
         this.description = description;
     }
 
@@ -72,12 +72,12 @@ public class Destinations {
         this.climate = climate;
     }
 
-    public String getTourist_flow() {
-        return this.tourist_flow;
+    public String getTouristFlow() {
+        return this.touristFlow;
     }
 
-    public void setTourist_flow(String tourist_flow) {
-        this.tourist_flow = tourist_flow;
+    public void setTouristFlow(String touristFlow) {
+        this.touristFlow = touristFlow;
     }
 
     public String getDescription() {

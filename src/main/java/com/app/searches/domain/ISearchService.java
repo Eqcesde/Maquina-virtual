@@ -7,9 +7,10 @@ public interface ISearchService {
 
     Searches findById(Long id);
 
-    Searches save(Searches search);
+    Searches save(Searches searche);
 
-    Searches update(Searches search, Long id);
+    Searches update(Searches searche, Long id);
 
     void deleteById(Long id);
 }
+

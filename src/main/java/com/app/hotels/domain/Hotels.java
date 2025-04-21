@@ -61,11 +61,11 @@ public class Hotels {
         this.location = location;
     }
 
-    public String getdestinationId() {
+    public String getDestinationId() {
         return this.destinationId;
     }
 
-    public void setdestinationId(String destinationId) {
+    public void setDestinationId(String destinationId) {
         this.destinationId = destinationId;
     }
 

@@ -35,9 +35,9 @@ public interface ISearchesRepository extends JpaRepository<Searches, Long> {
 
     // Additional application-specific methods:
 
-    // Search for a user by their email
-    Optional<Searches> findByEmail(String email);
+    // Search for a user by their userId
+    Optional<Searches> findByUserId(String userId);
 
-    // Check if an email is already registered
-    boolean existsByEmail(String email);
+    // Check if an userId is already registered
+    boolean existsByUserId(String userId);
 }

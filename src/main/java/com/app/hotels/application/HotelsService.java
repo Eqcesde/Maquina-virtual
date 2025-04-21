@@ -46,6 +46,7 @@ public class HotelsService implements IHotelService {
         Hotels existingHotel = findById(id);
         existingHotel.setName(hotel.getName());
         existingHotel.setLocation(hotel.getLocation());
+        existingHotel.setDestinationId(hotel.getDestinationId());
         existingHotel.setPricePerNight(hotel.getPricePerNight());
         return hotelRepository.save(existingHotel);
     }

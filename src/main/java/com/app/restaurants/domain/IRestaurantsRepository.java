@@ -23,7 +23,7 @@ public interface IRestaurantsRepository extends JpaRepository<Restaurants, Long>
     // Save a user (already provided by JpaRepository)
     @Override
     @NonNull
-    <S extends Restaurants> S save(@NonNull S user);
+    <S extends Restaurants> S save(@NonNull S restaurant);
 
     // Check if a user with a specific ID exists (already provided by JpaRepository)
     @Override
@@ -35,9 +35,9 @@ public interface IRestaurantsRepository extends JpaRepository<Restaurants, Long>
 
     // Additional application-specific methods:
 
-    // Search for a user by their email
-    Optional<Restaurants> findByEmail(String email);
+    // Search for a user by their name
+    Optional<Restaurants> findByName(String name);
 
-    // Check if an email is already registered
-    boolean existsByEmail(String email);
+    // Check if an name is already registered
+    boolean existsByName(String name);
 }
