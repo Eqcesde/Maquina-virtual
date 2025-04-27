@@ -4,8 +4,8 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.destinations.domain.IDestinationService;
 import com.app.destinations.domain.Destinations;
+import com.app.destinations.domain.IDestinationService;
 
 @RestController
 @RequestMapping("/api/destinations")

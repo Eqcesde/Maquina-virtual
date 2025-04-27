@@ -1,48 +1,25 @@
-package com.app.destinations.domain;
+package com.app.destinations.infrastructure;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import javax.print.attribute.standard.Destination;
 
-@Entity
-@Table(name = "Destinations")
-@Data
-public class Destinations {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DestinationDto {
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-    
-    @Column(nullable = false)
     private String country;
-
-    @Column(nullable = false, unique = true)
     private String climate;
-
-    @Column(nullable = false)
     private String touristFlow;
-
-    @Column(nullable = false)
     private String description;
-
-    @Column(nullable = false)
     private String placeTipeId;
-
-    @Column(nullable = false)
     private String averagePrice;
-
-    @Column(nullable = false)
     private String cuisineType;
-
-    @Column(nullable = false)
     private String entryPrice;
 
-    // Empty constructor (required for JPA)
-    public Destinations() {}
+    // Empty constructor
+    public DestinationDto() {
+    }
 
     // Constructor with parameters
-    public Destinations(Long id, String name, String country, String climate, String touristFlow, String description, String placeTipeId, String averagePrice, String cuisineType, String entryPrice) {
+    public DestinationDto(Long id, String name, String country, String climate, String touristFlow, String description, String placeTipeId, String averagePrice, String cuisineType, String entryPrice) {
         this.id = id;
         this.name = name;
         this.country = country;
@@ -135,5 +112,21 @@ public class Destinations {
     public String getentryPrice() {
         return this.entryPrice;
     }
-}
 
+    // toString() method
+    @Override
+    public String toString() {
+        return "DestinationDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ". country='" + country + '\'' +
+                ", climate='" + climate + '\'' +
+                ". touristFlow='" + touristFlow + '\'' +
+                ". description='" + description + '\'' +
+                ". placeTipeId='" + placeTipeId + '\'' +
+                ". averagePrice='" + averagePrice + '\'' +
+                ". cuisineType='" + cuisineType + '\'' +
+                ". entryPrice='" + entryPrice + '\'' +
+                '}';
+    }
+}
