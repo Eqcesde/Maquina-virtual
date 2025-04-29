@@ -1,6 +1,6 @@
 package com.app.destinations.infrastructure;
 
-import javax.print.attribute.standard.Destination;
+// import javax.print.attribute.standard.Destination;
 
 public class DestinationDto {
     private Long id;

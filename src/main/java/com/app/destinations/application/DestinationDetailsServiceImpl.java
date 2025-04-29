@@ -16,15 +16,15 @@
 //     private final IDestinationRepository destinationRepository;
 
 //     public DestinationDetailsServiceImpl(IDestinationRepository destinationRepository) {
-//         this.destinatioRepository = destinationRepository;
+//         this.destinationRepository = destinationRepository;
 //     }
 
 //     @Override
-//     public DestinationDetails loadDestinationByDestinationname(String name) throws DestinationnameNotFoundException {
-//         Destinations destination = destinatioRepository.findByName(name)
+//     public DestinationDetails loadDestinationByDestinationName(String name) throws DestinationnameNotFoundException {
+//         Destinations destination = destinationRepository.findByName(name)
 //                 .orElseThrow(() -> new DestinationnameNotFoundException("Destinatio not found with name: " + name));
 
-//         return new org.springframework.security.core.destinationdetails.Destination(
+//         return new org.springframework.security.core.destinatiodetails.Destination(
 //                 destination.getId(),
 //                 destination.getName(),
 //                 new ArrayList<>());
