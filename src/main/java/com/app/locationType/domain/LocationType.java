@@ -1,28 +1,28 @@
-package com.app.placeType.domain;
+package com.app.locationType.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "PlaceType")
+@Table(name = "LocationType")
 @Data
-public class PlaceType {
+public class LocationType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String typeName;
+    private String name;
 
     
     // Empty constructor (required for JPA)
-    public PlaceType() {}
+    public LocationType() {}
 
     // Constructor con parámetros
-    public PlaceType(Long id, String typeName) {
+    public LocationType(Long id, String name) {
         this.id = id;
-        this.typeName = typeName;
+        this.name = name;
         
     }
 
@@ -35,12 +35,12 @@ public class PlaceType {
         this.id = id;
     }
 
-    public String getTypeName() {
-        return typeName;
+    public String getName() {
+        return name;
     }
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public void setName(String name) {
+        this.name = name;
     }
 }
 

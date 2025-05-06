@@ -1,17 +1,17 @@
-package com.app.placeType.infrastructure;
+package com.app.locationType.infrastructure;
 
-public class PlaceTypeDto {
+public class LocationTypeDto {
     private Long id;
-    private String typeName;
+    private String name;
 
     // Empty constructor
-    public PlaceTypeDto() {
+    public LocationTypeDto() {
     }
 
     // Constructor with parameters
-    public PlaceTypeDto(Long id, String typeName) {
+    public LocationTypeDto(Long id, String name) {
         this.id = id;
-        this.typeName = typeName;
+        this.name = name;
     }
 
     // Getters y Setters
@@ -23,21 +23,20 @@ public class PlaceTypeDto {
         this.id = id;
     }
 
-    public String getTypeName() {
-        return typeName;
+    public String getName() {
+        return name;
     }
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public void seName(String name) {
+        this.name = name;
     }
-
 
     // toString() method
     @Override
     public String toString() {
         return "PlaceTypeDto{" +
                 "id=" + id +
-                ", typeName='" + typeName + '\'' +
+                ", Name='" + name + '\'' +
                 '}';
     }
 }

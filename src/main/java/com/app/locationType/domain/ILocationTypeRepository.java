@@ -1,4 +1,4 @@
-package com.app.placeType.domain;
+package com.app.locationType.domain;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,22 +8,22 @@ import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IPlaceTypeRepository extends JpaRepository<PlaceType, Long> {
+public interface ILocationTypeRepository extends JpaRepository<LocationType, Long> {
 
-    // Get all PlaceType (already provided by JpaRepository)
+    // Get all LocationType (already provided by JpaRepository)
     @Override
     @NonNull
-    List<PlaceType> findAll();
+    List<LocationType> findAll();
 
-    // Search PlaceType by ID (already provided by JpaRepository)
+    // Search LocationType by ID (already provided by JpaRepository)
     @Override
     @NonNull
-    Optional<PlaceType> findById(@NonNull Long id);
+    Optional<LocationType> findById(@NonNull Long id);
 
-    // Save a PlaceType (already provided by JpaRepository)
+    // Save a LocationType (already provided by JpaRepository)
     @Override
     @NonNull
-    <S extends PlaceType> S save(@NonNull S PlaceType);
+    <S extends LocationType> S save(@NonNull S LocationType);
 
     // Check if a user with a specific ID exists (already provided by JpaRepository)
     @Override
@@ -36,7 +36,7 @@ public interface IPlaceTypeRepository extends JpaRepository<PlaceType, Long> {
     // Additional application-specific methods:
 
     // Search for a user by their name
-    Optional<PlaceType> findByName(String name);
+    Optional<LocationType> findByName(String name);
 
     // Check if an name is already registered
     boolean existsByName(String name);
