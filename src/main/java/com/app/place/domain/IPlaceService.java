@@ -8,9 +8,9 @@ public interface IPlaceService {
 
     Place findById(Long id);
 
-    Place save(Place place);
+    Place save(Place Place);
 
-    Place update(Place place, Long id);
+    Place update(Place Place, Long id);
 
     void deleteById(Long id);
 }

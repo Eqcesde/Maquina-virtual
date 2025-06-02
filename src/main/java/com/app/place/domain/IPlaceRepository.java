@@ -9,7 +9,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IPlaceRepository extends JpaRepository<Place, Long> {
+   
     boolean existsByName(String name);
+
+    Optional<Place> findByName(String name);
 
 
     // Get all place (already provided by JpaRepository)
@@ -25,7 +28,7 @@ public interface IPlaceRepository extends JpaRepository<Place, Long> {
     // Save a place (already provided by JpaRepository)
     @Override
     @NonNull
-    <S extends Place> S save(@NonNull S place);
+    <S extends Place> S save(@NonNull S Place);
 
     // Check if a place with a specific ID exists (already provided by JpaRepository)
     @Override
@@ -35,11 +38,4 @@ public interface IPlaceRepository extends JpaRepository<Place, Long> {
     @Override
     void deleteById(@NonNull Long id);
 
-    // Additional application-specific methods:
-
-    // Search for a place by their email
-    Optional<Place> findByPlace(String place);
-
-    // Check if an place is already registered
-    boolean existsByPlace(String place);
 }
