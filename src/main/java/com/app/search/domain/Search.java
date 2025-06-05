@@ -1,32 +1,24 @@
-package com.app.locationType.domain;
+package com.app.search.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
-@Table(name = "LocationType")
-@Data
-public class LocationType {
+@Table(name = "search")
+public class Search {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
 
-    
-    // Empty constructor (required for JPA)
-    public LocationType() {}
+    public Search() {}
 
-    // Constructor con parámetros
-    public LocationType(Long id, String name) {
+    public Search(Long id, String name) {
         this.id = id;
         this.name = name;
-        
     }
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -42,5 +34,11 @@ public class LocationType {
     public void setName(String name) {
         this.name = name;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Search{" +
+                "id=" + id +
+                ", name='" + name + '\'' +'}';
+            }
+}

@@ -33,8 +33,8 @@ public class PlaceService implements IPlaceService {
     @Override
     @Transactional
     public Place save(Place place) {
-        if (placeRepository.existsByName(place.getName())) {
-            throw new IllegalArgumentException("Name registred: " + place.getName());
+        if (placeRepository.existsByName(place.getCountry())) {
+            throw new IllegalArgumentException("Name registred: " + place.getCountry());
         }
         return placeRepository.save(place);
     }
@@ -43,7 +43,7 @@ public class PlaceService implements IPlaceService {
     @Transactional
     public Place update(Place place, Long id) {
         Place existingplace = findById(id);
-        existingplace.setName(place.getName());
+        existingplace.setCountry(place.getCountry());
         return placeRepository.save(existingplace);
     }
 

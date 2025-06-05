@@ -1,15 +1,15 @@
-package com.app.locationType.infrastructure;
+package com.app.search.infrastructure;
 
-public class LocationTypeDto {
+public class SearchDto {
     private Long id;
     private String name;
 
-    // Empty constructor
-    public LocationTypeDto() {
+    // Constructor vacío
+    public SearchDto() {
     }
 
-    // Constructor with parameters
-    public LocationTypeDto(Long id, String name) {
+    // Constructor con parámetros
+    public SearchDto(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -27,16 +27,15 @@ public class LocationTypeDto {
         return name;
     }
 
-    public void seName(String name) {
+    public void setName(String name) { // <--- Corregido aquí
         this.name = name;
     }
 
     // toString() method
     @Override
     public String toString() {
-        return "PlaceTypeDto{" +
+        return "SearchDto{" +
                 "id=" + id +
-                ", Name='" + name + '\'' +
-                '}';
-    }
+                ", name='" + name + '\'' +'}';
+            }
 }

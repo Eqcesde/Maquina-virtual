@@ -1,5 +1,7 @@
 package com.app.users.domain;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -15,10 +17,15 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-     @NotBlank(message = "El nombre no puede estar vacío")
+    @NotBlank(message = "El nombre no puede estar vacío")
     @Size(min = 2, max = 50, message = "El nombre debe tener entre 2 y 50 caracteres")
     @Column(nullable = false)
     private String name;
+
+     @NotBlank(message = "El apellido no puede estar vacío")
+    @Size(min = 2, max = 50, message = "El apellido debe tener entre 2 y 50 caracteres")
+    @Column(nullable = false)
+    private String last_name;
 
     @NotBlank(message = "El correo electrónico es obligatorio")
     @Email(message = "Debe proporcionar un correo válido")
@@ -31,15 +38,25 @@ public class Users {
     @Column(nullable = false)
     private String password;
 
+    @NotBlank(message = "La fecha no puede estar vacía")
+    @Size(min = 6, message = "La fecha debe tener al menos 6 caracteres")
+    @Column(nullable = false)
+    private LocalDate date;
+
+
+
+
     // Empty constructor (required for JPA)
     public Users() {}
 
     // Constructor with parameters
-    public Users(Long id, String name, String email, String password) {
+    public Users(Long id, String name, String last_name , String email, String password, LocalDate date ) {
         this.id = id;
         this.name = name;
-        this.email = email;
+        this.last_name = last_name;
+        this.email = email; /* Agregar los elementos del modelo de datos de MySQL */
         this.password = password;
+        this.date = date;
     }
 
     // Getters y Setters
@@ -58,6 +75,14 @@ public class Users {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
 
     public String getEmail() {
         return email;
@@ -73,5 +98,13 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public LocalDate getdate() {
+       return date;
+    }
+
+    public void setdate(LocalDate date) {
+        this.date = date;
     }
 }
