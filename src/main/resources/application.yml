@@ -16,7 +16,7 @@ spring:
     password: root
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none #se cambia update por none 
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect

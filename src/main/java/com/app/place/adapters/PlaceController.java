@@ -24,7 +24,7 @@ public class PlaceController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Place> getPlaceById(@PathVariable Long id) {
+    public ResponseEntity<Place> getPlaceById(@PathVariable String id) {
         Place place = placeService.findById(id);
         return ResponseEntity.ok(place);
     }
@@ -37,14 +37,13 @@ public class PlaceController {
 
     // update place
     @PutMapping("/{id}")
-    public ResponseEntity<Place> updatePlace(@PathVariable Long id, @RequestBody Place place) {
+    public ResponseEntity<Place> updatePlace(@PathVariable String id, @RequestBody Place place) {
         Place updatedPlace = placeService.update(place, id);
         return ResponseEntity.ok(updatedPlace);
-    }
-
+    } 
     // delete place
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePlace(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePlace(@PathVariable String id) {
         placeService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

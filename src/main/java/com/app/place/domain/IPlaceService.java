@@ -6,11 +6,11 @@ public interface IPlaceService {
     
     List<Place> findAll();
 
-    Place findById(Long id);
+    Place findById(String id);
 
     Place save(Place Place);
 
-    Place update(Place Place, Long id);
+    Place update(Place Place, String id);
 
-    void deleteById(Long id);
+    void deleteById(String id);
 }

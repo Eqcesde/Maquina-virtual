@@ -1,41 +1,23 @@
 package com.app.place.domain;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.lang.NonNull;
-import org.springframework.stereotype.Repository;
-
 @Repository
-public interface IPlaceRepository extends JpaRepository<Place, Long> {
-   
-    boolean existsByName(String name);
+public interface IPlaceRepository extends JpaRepository<Place, String> {
 
-    Optional<Place> findByName(String name);
+    // Buscar lugares por país
+    List<Place> findByCountry(String country);
 
+    // Buscar lugar por país y ciudad exacta
+    Optional<Place> findByCountryAndCity(String country, String city);
 
-    // Get all place (already provided by JpaRepository)
-    @Override
-    @NonNull
-    List<Place> findAll();
+    // Buscar lugares que contengan una palabra clave en la descripción (ignorando mayúsculas/minúsculas)
+    List<Place> findByDescriptionContainingIgnoreCase(String keyword);
 
-    // Search place by ID (already provided by JpaRepository)
-    @Override
-    @NonNull
-    Optional<Place> findById(@NonNull Long id);
-
-    // Save a place (already provided by JpaRepository)
-    @Override
-    @NonNull
-    <S extends Place> S save(@NonNull S Place);
-
-    // Check if a place with a specific ID exists (already provided by JpaRepository)
-    @Override
-    boolean existsById(@NonNull Long id);
-
-    // Delete place by ID (already provided by JpaRepository)
-    @Override
-    void deleteById(@NonNull Long id);
-
+    // Buscar lugares con un costo de transporte menor o igual a cierto valor
+    List<Place> findByTransportCostLessThanEqual(Float maxCost);
 }

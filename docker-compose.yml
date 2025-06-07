@@ -33,7 +33,8 @@ services:
       - MYSQL_DATABASE=usersdb
       - MYSQL_ROOT_PASSWORD=root
     volumes:
-      - ./mysql-data:/var/lib/mysql  # Data persistence at the project root
+      - ./mysql-data:/var/lib/mysql 
+      #-./db/db_ # Data persistence at the project root
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
       interval: 5s

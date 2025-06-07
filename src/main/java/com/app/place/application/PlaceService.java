@@ -24,24 +24,27 @@ public class PlaceService implements IPlaceService {
         return placeRepository.findAll();
     }
 
-    @Override
-    public Place findById(Long id) {
-        return placeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("place not found with ID: " + id));
+   @Override
+public Place findById(String id) {
+    return placeRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Place not found with ID: " + id));
+}
+
+@Override
+@Transactional
+public Place save(Place place) {
+    // Verifica si ya existe un lugar con el mismo país y ciudad
+    if (placeRepository.findByCountryAndCity(place.getCountry(), place.getCity()).isPresent()) {
+        throw new IllegalArgumentException("Ya existe un lugar registrado con ese país y ciudad.");
     }
+
+    return placeRepository.save(place);
+}
+
 
     @Override
     @Transactional
-    public Place save(Place place) {
-        if (placeRepository.existsByName(place.getCountry())) {
-            throw new IllegalArgumentException("Name registred: " + place.getCountry());
-        }
-        return placeRepository.save(place);
-    }
-
-    @Override
-    @Transactional
-    public Place update(Place place, Long id) {
+    public Place update(Place place, String id) {
         Place existingplace = findById(id);
         existingplace.setCountry(place.getCountry());
         return placeRepository.save(existingplace);
@@ -49,7 +52,7 @@ public class PlaceService implements IPlaceService {
 
     @Override
     @Transactional
-    public void deleteById(Long id) {
+    public void deleteById(String id) {
         Place place = findById(id);
         placeRepository.delete(place);
     }
